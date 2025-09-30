@@ -53,7 +53,7 @@ Reusable data:
 ---
 
 ## 3) Email Length — *(practice bounds)* **5–254 chars**
-> Real apps vary; use these for practice. Verify UI `maxlength` vs server validation.
+> Verify UI `maxlength` vs server validation.
 
 | TC ID     | Email Length | Example (illustrative) | Boundary Type     | Expected Result |
 |-----------|--------------|------------------------|-------------------|-----------------|
@@ -76,12 +76,3 @@ _Preconditions for this block:_ user exists, verified, not locked initially.
 | BVA-L-02  | 2nd wrong password                        | Just below lock    | Submit wrong password again       | ❌ “Invalid credentials.” (attempts=2) |
 | BVA-L-03  | 3rd wrong password                        | **At** lock point  | Submit wrong password again       | ❌ **Account locked** message; lock set |
 | BVA-L-04  | 4th attempt (any password)                | Just beyond lock   | Try to submit any password        | ❌ Denied: “Account is locked.” (no auth) |
-
----
-
-## 5) Whitespace / Trimming — **0 vs ≥1 space**
-**Rule:** Trim leading/trailing spaces; whitespace-only counts as empty.
-
-| TC ID     | Input (email / password)                 | Boundary Type     | Steps        | Expected Result |
-|-----------|-------------------------------------------|-------------------|--------------|-----------------|
-| BVA-W-01  | `␣user@test.com␣` / `␣Passw0rd␣`        | 1 space added
