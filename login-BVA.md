@@ -3,7 +3,7 @@
 **Goal:** Validate behavior at edges (just below, at, and just above) of defined limits.
 
 ## Scope & Assumptions
-- **Username** must be a **valid email** (syntactic check).
+- **Username** must be a **valid email**.
 - **Password** must be **8–16 characters**.
 - Both fields are **required** (empty → error).
 - **Lockout** after **3** consecutive failed attempts.
@@ -52,7 +52,7 @@ Reusable data:
 
 ---
 
-## 3) Email Length — *(practice bounds)* **5–254 chars**
+## 3) Email Length — **5–254 chars**
 > Verify UI `maxlength` vs server validation.
 
 | TC ID     | Email Length | Example (illustrative) | Boundary Type     | Expected Result |
