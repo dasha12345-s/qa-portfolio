@@ -7,7 +7,6 @@
 - **Password** must be **8–16 characters**.
 - Both fields are **required** (empty → error).
 - **Lockout** after **3** consecutive failed attempts.
-- UI may enforce `maxlength`; app trims leading/trailing spaces.
 
 ---
 
