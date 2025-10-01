@@ -1,1 +1,13 @@
 # QA-Portfolio
+## Login Test Pack (Index)
+
+- **Design Techniques**
+  - [Equivalence Partitioning](login-equivalence-partitioning.md)
+  - [Boundary Value Analysis](login-boundary-value-analysis.md)
+  - [Decision Table](login-decision-table.md)
+  - [State Transition](login-state-transition.md)
+  - [Use Cases](login-use-cases.md)
+
+- **Non-Functional**
+  - [API / Contract](login-api.md)
+  - [Security Checklist](login-security.md)
