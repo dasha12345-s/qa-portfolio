@@ -1,3 +1,5 @@
+# State Transition Tests (ST) — Login Flow
+
 **States**
 - `LoggedOut` — No valid session/token.
 - `MFA_Pending` — Primary auth passed; waiting for MFA.
