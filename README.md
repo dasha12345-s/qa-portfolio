@@ -19,4 +19,4 @@ This portfolio demonstrates manual QA techniques applied to a Login feature, inc
 - [Login Bug Reports](login-bug-reports.md)
 
 ### Traceability
-- [Traceability Matrix](traceability-matrix.md)
+- [Traceability Matrix](login-traceability-matrix.md)
