@@ -1,5 +1,5 @@
 # QA-Portfolio
-## 📂 Login Test Pack
+## Login Test Pack
 
 ### Design Techniques
 - [Equivalence Partitioning](login-equivalence-partitioning.md)

@@ -1,4 +1,4 @@
-# 🔗 Traceability Matrix — Login Feature
+# Traceability Matrix — Login Feature
 
 ---
 
@@ -17,7 +17,7 @@
 
 ---
 
-## ✅ Notes
+## Notes
 - **UC IDs** → defined in [login-use-cases.md](./login-use-cases.md)  
 - **ST IDs** → defined in [login-state-transition.md](./login-state-transition.md)  
 - **BUG IDs** → defined in [login-bug-reports.md](./login-bug-reports.md)  

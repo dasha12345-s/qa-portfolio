@@ -19,34 +19,34 @@
 
 ---
 
-### 📝 Description
+### Description
 On smaller screen widths (<400px), the “Login” button shifts left and overlaps the password field, making the form hard to use on mobile devices.  
 
 ---
 
-### ✅ Preconditions
+### Preconditions
 - Browser window resized to mobile width (375px).  
 
 ---
 
-### 🔄 Steps to Reproduce
+### Steps to Reproduce
 1. Navigate to `/login`.  
 2. Resize browser width to 375px (mobile view).  
 3. Observe the alignment of the Login button.  
 
 ---
 
-### 🎯 Expected Result
+### Expected Result
 Login button remains centered and properly aligned under input fields at all screen sizes.  
 
 ---
 
-### ⚠️ Actual Result
+### Actual Result
 Login button shifts left and overlaps the password input field on screen widths <400px.  
 
 ---
 
-### 📎 Attachments
+### Attachments
 - Screenshot of misaligned button.  
 
 ---
@@ -69,17 +69,17 @@ Login button shifts left and overlaps the password input field on screen widths 
 
 ---
 
-### 📝 Description
+### Description
 Password reset emails are not being sent when users click “Forgot Password”. Logs show 500 error from the email microservice.  
 
 ---
 
-### ✅ Preconditions
+### Preconditions
 - User account exists with a valid email.  
 
 ---
 
-### 🔄 Steps to Reproduce
+### Steps to Reproduce
 1. Go to `/login`.  
 2. Click “Forgot Password?”.  
 3. Enter a valid email and click “Submit”.  
@@ -87,17 +87,17 @@ Password reset emails are not being sent when users click “Forgot Password”.
 
 ---
 
-### 🎯 Expected Result
+### Expected Result
 User receives a password reset email within 1–2 minutes, containing a secure reset link.  
 
 ---
 
-### ⚠️ Actual Result
+### Actual Result
 No reset email received after 10 minutes. Logs indicate `500 Internal Server Error` from email service.  
 
 ---
 
-### 📎 Attachments
+### Attachments
 - Screenshot of logs (500 error).  
 
 ---
@@ -120,17 +120,17 @@ No reset email received after 10 minutes. Logs indicate `500 Internal Server Err
 
 ---
 
-### 📝 Description
+### Description
 After clicking **Logout**, the session token is not invalidated. Users can press the **Back** button in the browser and regain access to authenticated pages without logging in again.  
 
 ---
 
-### ✅ Preconditions
+### Preconditions
 - User logged in successfully with valid credentials.  
 
 ---
 
-### 🔄 Steps to Reproduce
+### Steps to Reproduce
 1. Log in with valid credentials.  
 2. Navigate to a secure page (e.g., `/dashboard`).  
 3. Click **Logout**.  
@@ -138,20 +138,20 @@ After clicking **Logout**, the session token is not invalidated. Users can press
 
 ---
 
-### 🎯 Expected Result
+### Expected Result
 - Session should be terminated.  
 - Pressing Back should redirect user to the login page.  
 - No authenticated content should be displayed.  
 
 ---
 
-### ⚠️ Actual Result
+### Actual Result
 - User is able to see cached authenticated content after logout.  
 - Session is still considered valid until browser refresh or timeout.  
 
 ---
 
-### 📎 Attachments
+### Attachments
 - Screenshot/video showing dashboard accessible after logout.  
 
 ---
@@ -174,37 +174,37 @@ After clicking **Logout**, the session token is not invalidated. Users can press
 
 ---
 
-### 📝 Description
+### Description
 When attempting to log in via Google SSO and the user **denies permissions** on the consent screen, the app crashes and shows a blank page instead of handling the error gracefully.  
 
 ---
 
-### ✅ Preconditions
+### Preconditions
 - Application configured with Google SSO integration.  
 - Test user available with Google account.  
 
 ---
 
-### 🔄 Steps to Reproduce
+### Steps to Reproduce
 1. On the login page, click **“Sign in with Google”**.  
 2. At the Google consent screen, click **“Cancel”** or **“Deny access”**.  
 3. Observe the application behavior.  
 
 ---
 
-### 🎯 Expected Result
+### Expected Result
 - Application should display an error message: *“SSO login failed. Please try again or use standard login.”*  
 - User should be redirected back to the login page.  
 
 ---
 
-### ⚠️ Actual Result
+### Actual Result
 - App shows a blank white page.  
 - No message or redirection occurs.  
 
 ---
 
-### 📎 Attachments
+### Attachments
 - Screenshot/video of blank page after denying SSO consent.  
 
 ---
@@ -225,17 +225,17 @@ When attempting to log in via Google SSO and the user **denies permissions** on 
 
 ---
 
-### 📝 Description
+### Description
 The password input field on the login page allows users to copy and paste their entered password. This could expose sensitive data if clipboard contents are intercepted by another application or left in clipboard history.  
 
 ---
 
-### ✅ Preconditions
+### Preconditions
 - Login page accessible.  
 
 ---
 
-### 🔄 Steps to Reproduce
+### Steps to Reproduce
 1. Navigate to `/login`.  
 2. Enter a password into the password field.  
 3. Highlight and copy the password (CTRL+C / CMD+C).  
@@ -243,17 +243,17 @@ The password input field on the login page allows users to copy and paste their 
 
 ---
 
-### 🎯 Expected Result
+### Expected Result
 Password fields should disable copy/paste functionality for better security.  
 
 ---
 
-### ⚠️ Actual Result
+### Actual Result
 User can copy and paste the password freely, exposing sensitive credentials.  
 
 ---
 
-### 📎 Attachments
+### Attachments
 - Screenshot showing password copied from login field and pasted into plain text editor.  
 
 ---
