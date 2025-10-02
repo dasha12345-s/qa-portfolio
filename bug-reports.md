@@ -208,3 +208,52 @@ When attempting to log in via Google SSO and the user **denies permissions** on 
 - Screenshot/video of blank page after denying SSO consent.  
 
 ---
+## Bug 5 — Security Bug
+
+**Project**: Login Module  
+**Issue Type**: Bug  
+**Summary**: Password field allows copy/paste, exposing sensitive data  
+**Priority**: Medium  
+**Severity**: Major (security / privacy risk)  
+**Status**: Open  
+**Assignee**: Unassigned  
+**Environment**:  
+- OS: Windows 11, macOS Ventura  
+- Browser: Chrome 118, Safari 16  
+- Build: v2.5.0-qa  
+- Test Environment: Staging  
+
+---
+
+### 📝 Description
+The password input field on the login page allows users to copy and paste their entered password. This could expose sensitive data if clipboard contents are intercepted by another application or left in clipboard history.  
+
+---
+
+### ✅ Preconditions
+- Login page accessible.  
+
+---
+
+### 🔄 Steps to Reproduce
+1. Navigate to `/login`.  
+2. Enter a password into the password field.  
+3. Highlight and copy the password (CTRL+C / CMD+C).  
+4. Paste it into a text editor or another field.  
+
+---
+
+### 🎯 Expected Result
+Password fields should disable copy/paste functionality for better security.  
+
+---
+
+### ⚠️ Actual Result
+User can copy and paste the password freely, exposing sensitive credentials.  
+
+---
+
+### 📎 Attachments
+- Screenshot showing password copied from login field and pasted into plain text editor.  
+
+---
