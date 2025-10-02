@@ -1,4 +1,4 @@
-# 🐞 Bug Reports (Jira-Style)
+# 🐞 Bug Reports
 
 ---
 
@@ -51,6 +51,7 @@ Login button shifts left and overlaps the password input field on screen widths 
 
 ---
 
+
 ## Bug 2 — Functional / Integration Bug
 
 **Project**: Login Module  
@@ -100,6 +101,7 @@ No reset email received after 10 minutes. Logs indicate `500 Internal Server Err
 - Screenshot of logs (500 error).  
 
 ---
+
 
 ## Bug 3 — Authentication / Logout Bug
 
@@ -153,6 +155,7 @@ After clicking **Logout**, the session token is not invalidated. Users can press
 - Screenshot/video showing dashboard accessible after logout.  
 
 ---
+
 
 ## Bug 4 — SSO / Integration Bug
 
