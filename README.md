@@ -14,6 +14,8 @@ This portfolio demonstrates manual QA techniques applied to a Login feature, inc
 ### Non-Functional
 - [API / Contract](login-api.md)
 - [Security Checklist](login-security.md)
+- [SQL / DB Validation](login-sql-validation.md)
+- [UI / UX Checklist](login-ui-ux-checklist.md)
 
 ### Bug Reports
 - [Login Bug Reports](login-bug-reports.md)
