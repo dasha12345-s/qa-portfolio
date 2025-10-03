@@ -1,6 +1,6 @@
 # QA-Portfolio
 
-This portfolio demonstrates manual QA techniques applied to a Login feature, including test design methods (EP, BVA, Decision Tables, State Transitions, Use Cases), non-functional testing (API, Security), and example bug reports. The goal is to show structured QA documentation and real-world defect reporting.
+I decided to build my QA portfolio around the Login form, since it’s a core functionality present in almost every application. Login testing combines functional, UI/UX, security, database, and integration aspects, making it the perfect example to demonstrate my QA skills.
 
 ## Login Test Pack
 
