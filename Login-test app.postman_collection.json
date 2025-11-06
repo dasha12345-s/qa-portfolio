@@ -1,0 +1,218 @@
+{
+	"info": {
+		"_postman_id": "505ef321-53b6-433b-8ee1-482f851c990f",
+		"name": "Login-test app",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23702830"
+	},
+	"item": [
+		{
+			"name": "Succesful login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"email\": \"user@test.com\", \"password\": \"Password123!\" }\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/{{api}}/login",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"{{api}}",
+						"login"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Locked user",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n     \"email\": \"locked@test.com\",\n    \"password\": \"Password123!\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/{{api}}/login",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"{{api}}",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Attempt to log in with locked user",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"const loginUrl = 'http://localhost:3000/api/login';",
+							"",
+							"    for (let i = 1; i <= 5; i++) {",
+							"      pm.sendRequest({",
+							"        url: loginUrl,",
+							"        method: 'POST',",
+							"        header: {'Content-Type': 'application/json'},",
+							"          body: {",
+							"              mode: 'raw',",
+							"              raw: JSON.stringify({",
+							"                  email: 'user5@test.com',",
+							"                  password: 'WrongPassword123!'",
+							"              })",
+							"          }",
+							"      }, function (err, res) {",
+							"          console.log('Attempt ' + i + ':', res.code);",
+							"      });",
+							"  }",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status is 401 for locked user\", function () {",
+							"    pm.response.to.have.status(401);",
+							"});",
+							"",
+							"pm.test(\"Error message is correct\", function () {",
+							"    const json = pm.response.json();",
+							"    pm.expect(json.success).to.eql(false);",
+							"    pm.expect(json.message).to.contain(\"Account temporarily locked\");",
+							"});",
+							"",
+							"pm.test(\"Captcha flag is present\", function () {",
+							"    const json = pm.response.json();",
+							"    pm.expect(json).to.have.property(\"requiresCaptcha\", true);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{   \n    \"email\": \"user5@test.com\",\n    \"password\": \"Password123!\"\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/{{api}}/login",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"{{api}}",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Health check",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/{{api}}/health",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"{{api}}",
+						"health"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "password",
+				"value": "{{password}}",
+				"type": "string"
+			},
+			{
+				"key": "username",
+				"value": "{{email}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
