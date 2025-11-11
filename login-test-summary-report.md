@@ -86,6 +86,7 @@ Once these major issues are fixed, a **regression test cycle** should be execute
 - [Test Plan](login-test-plan.md)
 - [API](login-api.md)
 - [Postman Collection](login-app.postman_collection.json)
-- [Cypress Tests](login-ui-ux-tests.cy.js, login-use-cases.cy.js)
+- [Cypress Test – UI/UX](login-ui-ux-tests.cy.js)  
+- [Cypress Test – Use Cases](login-use-cases.cy.js)
 - [Bug Reports](login-bug-reports.md)
 - [Traceability Matrix](login-traceability-matrix.md)
