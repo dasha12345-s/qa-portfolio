@@ -1,6 +1,11 @@
 # QA Portfolio – Login Feature
 
 ## Project Overview
+
+
+Hi, I’m **Darya Shostak**, a QA Engineer specializing in manual and automation testing.  
+This portfolio reflects how I approach testing end-to-end — combining analysis, documentation, API validation, and automation.
+
 I decided to build my QA portfolio around the **Login feature**, since it’s a core functionality present in almost every application.  
 Login testing combines **functional**, **UI/UX**, **security**, **database**, and **integration** aspects — making it the perfect example to demonstrate my QA skills.
 
