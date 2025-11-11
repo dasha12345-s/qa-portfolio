@@ -28,8 +28,7 @@ It’s designed to showcase how I think as a QA engineer — ensuring coverage, 
 - [Use Cases](login-use-cases.md)
 
 ### Non-Functional & API Testing
-- [API / Contract Testing](login-api.md)  
-- [API Negative Cases](login-api-negative-cases.md)  
+- [API / Contract Testing](login-api.md) 
 - [Security Checklist](login-security.md)  
 - [SQL / DB Validation](login-sql-validation.md)  
 - [UI / UX Checklist](login-ui-ux-checklist.md)
