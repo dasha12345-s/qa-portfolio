@@ -26,5 +26,9 @@
   "invalid_password": {
     "username" : "standard_user",
     "password" : "invalid_ password"
+  },
+   "invalid_username": {
+    "username" : "invalid_user",
+    "password" : "secret_sauce"
   }
 }

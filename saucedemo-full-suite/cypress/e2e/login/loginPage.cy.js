@@ -1,4 +1,4 @@
-import loginPage from '../pages/LoginPage'
+import loginPage from '../../pages/LoginPage'
 
 describe('Login Page', () => {
 
@@ -7,8 +7,7 @@ describe('Login Page', () => {
   })
 
   it('should show the page heading', () => {
-    loginPage.logo.should('be.visible')
-    loginPage.logo.should('contain.text', 'Swag Labs')
+    loginPage.logo.should('be.visible').and('contain.text', 'Swag Labs')
   })
 
   it('username input should be visible', () => {
@@ -22,15 +21,24 @@ describe('Login Page', () => {
   it('login-button input should be visible', () => {
     loginPage.loginButton.should('be.visible')
   })
+})
 
-  it('should throw an error if log in with invalid credentials', () => {
+describe('Login Page - error scenarios', () => {
+
+   it('should throw an error if log in with invalid password', () => {
    cy.login('invalid_password')
 
     loginPage.errorMessage.should('contain.text', 'Username and password do not match')
+  })
+
+  it('should trow an error if log in with invalid username', () => {
+    cy.login('invalid_username')
+    loginPage.errorMessage.should('contain.text', 'Epic sadface: Username and password do not match any user in this service')
   })
 
   it('should throw an error if log in with locked out user', () => {
     cy.login('locked')
     loginPage.errorMessage.should('contain.text', 'Epic sadface: Sorry, this user has been locked out.')
   })
+
 })
