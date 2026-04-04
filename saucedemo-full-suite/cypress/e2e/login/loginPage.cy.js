@@ -7,7 +7,7 @@ describe('Login Page', () => {
   })
 
   it('should show the page heading', () => {
-    loginPage.logo.should('be.visible').and('contain.text', 'Swaq Labs')
+    loginPage.logo.should('be.visible').and('contain.text', 'Swag Labs')
   })
 
   it('username input should be visible', () => {
