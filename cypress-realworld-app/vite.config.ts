@@ -13,6 +13,9 @@ export default defineConfig(({ mode }) => {
     server: {
       port: 3000,
     },
+    optimizeDeps: {
+      include: ["react-virtualized"],
+    },
     build: {
       outDir: "build",
       sourcemap: true,
@@ -33,6 +36,10 @@ export default defineConfig(({ mode }) => {
         {
           find: "./runtimeConfig",
           replacement: "./runtimeConfig.browser", // ensures browser compatible version of AWS JS SDK is used
+        },
+        {
+          find: /^react-virtualized$/,
+          replacement: "react-virtualized/dist/commonjs/index.js",
         },
       ],
     },

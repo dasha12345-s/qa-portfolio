@@ -189,45 +189,5 @@
     "build:ci": "cross-env CYPRESS_COVERAGE=true vite build",
     "build": "vite build",
     "codesandbox:start:api": "yarn tsnode:not-instrumented --files backend/app.ts",
-    "codesandbox:start": "NODE_ENV=development TSC_COMPILE_ON_ERROR=true concurrently \"vite\" yarn:start:api:codesandbox",
-    "postinstall": "husky install && patch-package"
-  },
-  "engines": {
-    "node": "^20.0.0 || ^22.0.0"
-  },
-  "husky": {
-    "hooks": {
-      "pre-push": "yarn types"
-    }
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
-  "percy": {
-    "version": 1,
-    "snapshot": {
-      "widths": [
-        1280
-      ]
-    }
-  },
-  "nyc": {
-    "exclude": [
-      "src/models/*.ts"
-    ],
-    "reporter": [
-      "html",
-      "json"
-    ]
-  },
-  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
-}
+     "codesandbox:start": "NODE_ENV=development TSC_COMPILE_ON_ERROR=true concurrently \"vite\" yarn:start:api:codesandbox"
+  }}

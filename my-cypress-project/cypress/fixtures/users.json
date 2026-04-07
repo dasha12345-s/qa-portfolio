@@ -1,0 +1,22 @@
+{
+  "defaultUser" : {
+    "username": "Heath93",
+    "password": "s3cret"
+  },
+  "alternativeUser" : {
+    "username": "Dina20",
+    "password": "s3cret"
+  },
+  "invalidUsername" : {
+    "username": "Rosenbaum",
+    "password": "s3cret"
+  },
+  "invalidPassword" : {
+    "username": "Rosenbaum",
+    "password": "notsos3cret"
+  },
+  "shortPassword" : {
+    "username": "Rosen",
+    "password": "sos"
+  }
+}
