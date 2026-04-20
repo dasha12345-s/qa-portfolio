@@ -6,6 +6,10 @@ class NewTransaction{
     get payButton() {return cy.get('[data-test="transaction-create-submit-payment"]')}
     get request() {return cy.get('[data-test="transaction-create-submit-request"]')}
     get userList() {return cy.get('[data-test="users-list"]')}
+
+     visit(){
+        cy.visit('/')
+    }
 }
 
 export default new NewTransaction()
