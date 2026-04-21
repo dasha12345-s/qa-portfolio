@@ -1,7 +1,7 @@
 import newTransactionPage from "../../pages/NewTransactionPage";
 import sideBarMenu from "../../pages/SideBarMenu";
 
-describe('Transactions Page flow', () => {
+describe('Transactions Page flow - send payment', () => {
 
     beforeEach(() => {
 

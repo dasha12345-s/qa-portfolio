@@ -11,7 +11,7 @@
       "phoneNumber": "398-225-9900",
       "avatar": "https://avatars.dicebear.com/api/human/uBmeaz5pX.svg",
       "defaultPrivacyLevel": "public",
-      "balance": 150653,
+      "balance": 150953,
       "createdAt": "2023-03-09T22:26:40.101Z",
       "modifiedAt": "2024-03-07T10:07:57.580Z"
     },
@@ -41,7 +41,7 @@
       "phoneNumber": "887-309-1593",
       "avatar": "https://avatars.dicebear.com/api/human/_XblMqbuoP.svg",
       "defaultPrivacyLevel": "contacts",
-      "balance": 159180,
+      "balance": 158880,
       "createdAt": "2023-05-21T05:01:54.594Z",
       "modifiedAt": "2024-03-07T14:11:52.161Z"
     },
@@ -9857,16 +9857,17 @@
       "modifiedAt": "2024-03-07T21:58:09.668Z"
     },
     {
-      "id": "VqRhjFAaQ",
-      "uuid": "36ac4465-feae-4b72-a9fc-9865e31302fc",
-      "amount": 300,
-      "description": "here you go-auto",
+      "id": "9c9qB-uWJ",
+      "uuid": "62d97c83-3139-4328-8aab-aefbbb21f0a3",
+      "amount": 5000,
+      "description": "reject money!",
       "receiverId": "_XblMqbuoP",
       "senderId": "uBmeaz5pX",
       "privacyLevel": "public",
-      "status": "complete",
-      "createdAt": "2026-04-21T14:26:20.026Z",
-      "modifiedAt": "2026-04-21T14:26:20.026Z"
+      "status": "pending",
+      "requestStatus": "pending",
+      "createdAt": "2026-04-21T21:54:42.808Z",
+      "modifiedAt": "2026-04-21T21:54:42.808Z"
     }
   ],
   "likes": [
@@ -10445,14 +10446,14 @@
       "modifiedAt": "2024-03-07T17:13:52.110Z"
     },
     {
-      "id": "S_GQK0sNns",
-      "uuid": "49c0cf34-602c-4cdc-8ffe-1e09eb33b9e3",
+      "id": "k3EN9xu8QQ",
+      "uuid": "d76dd8e5-1e59-47d3-8d7c-a2e136ccddb8",
       "userId": "_XblMqbuoP",
-      "transactionId": "VqRhjFAaQ",
-      "status": "received",
+      "transactionId": "9c9qB-uWJ",
+      "status": "requested",
       "isRead": false,
-      "createdAt": "2026-04-21T14:26:20.039Z",
-      "modifiedAt": "2026-04-21T14:26:20.039Z"
+      "createdAt": "2026-04-21T21:54:42.812Z",
+      "modifiedAt": "2026-04-21T21:54:42.812Z"
     }
   ],
   "banktransfers": [
