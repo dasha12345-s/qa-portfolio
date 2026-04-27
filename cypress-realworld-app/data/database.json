@@ -11,7 +11,7 @@
       "phoneNumber": "398-225-9900",
       "avatar": "https://avatars.dicebear.com/api/human/uBmeaz5pX.svg",
       "defaultPrivacyLevel": "public",
-      "balance": 155953,
+      "balance": 150953,
       "createdAt": "2023-03-09T22:26:40.101Z",
       "modifiedAt": "2024-03-07T10:07:57.580Z"
     },
@@ -41,7 +41,7 @@
       "phoneNumber": "887-309-1593",
       "avatar": "https://avatars.dicebear.com/api/human/_XblMqbuoP.svg",
       "defaultPrivacyLevel": "contacts",
-      "balance": 153880,
+      "balance": 158880,
       "createdAt": "2023-05-21T05:01:54.594Z",
       "modifiedAt": "2024-03-07T14:11:52.161Z"
     },
@@ -9857,17 +9857,17 @@
       "modifiedAt": "2024-03-07T21:58:09.668Z"
     },
     {
-      "id": "47MvPy6Z5",
-      "uuid": "3eceba48-2d2e-4fef-a86c-e0f65bace6b6",
-      "amount": 5000,
-      "description": "reject request!",
+      "id": "3fgGaJBHm",
+      "uuid": "b9168f64-00e2-4adf-8e47-f7abc0869680",
+      "amount": 1000,
+      "description": "want some more money",
       "receiverId": "_XblMqbuoP",
-      "senderId": "uBmeaz5pX",
-      "privacyLevel": "public",
+      "senderId": "_XblMqbuoP",
+      "privacyLevel": "contacts",
       "status": "complete",
-      "requestStatus": "rejected",
-      "createdAt": "2026-04-23T19:44:16.003Z",
-      "modifiedAt": "2026-04-23T19:44:16.003Z"
+      "requestStatus": "accepted",
+      "createdAt": "2026-04-27T18:51:00.646Z",
+      "modifiedAt": "2026-04-27T18:51:00.646Z"
     }
   ],
   "likes": [
@@ -10446,24 +10446,24 @@
       "modifiedAt": "2024-03-07T17:13:52.110Z"
     },
     {
-      "id": "Kpef24FNKw",
-      "uuid": "e2bb4190-c3cc-45d4-a5d0-e541062653a8",
+      "id": "DCPEB4PVPq",
+      "uuid": "6996c873-dc3e-4bf9-a3f6-d84811b89f80",
       "userId": "_XblMqbuoP",
-      "transactionId": "47MvPy6Z5",
+      "transactionId": "3fgGaJBHm",
       "status": "requested",
       "isRead": false,
-      "createdAt": "2026-04-23T19:44:16.008Z",
-      "modifiedAt": "2026-04-23T19:44:16.008Z"
+      "createdAt": "2026-04-27T18:51:00.652Z",
+      "modifiedAt": "2026-04-27T18:51:00.652Z"
     },
     {
-      "id": "isrf8i2l9",
-      "uuid": "480e9a7e-71b7-4439-92b4-a7fac341206b",
-      "userId": "uBmeaz5pX",
-      "transactionId": "47MvPy6Z5",
+      "id": "hQWQ0pP06O",
+      "uuid": "166c89da-3766-4a41-8690-76d87109cd16",
+      "userId": "_XblMqbuoP",
+      "transactionId": "3fgGaJBHm",
       "status": "received",
       "isRead": false,
-      "createdAt": "2026-04-23T19:44:18.222Z",
-      "modifiedAt": "2026-04-23T19:44:18.222Z"
+      "createdAt": "2026-04-27T18:51:00.714Z",
+      "modifiedAt": "2026-04-27T18:51:00.714Z"
     }
   ],
   "banktransfers": [

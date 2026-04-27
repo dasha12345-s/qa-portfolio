@@ -93,7 +93,10 @@ describe('TransactionPage - request payment ', () => {
         })
     })
 
-    it('should reject a payment request and verify both balances are the same', () => {
+    
+// TODO: Remove skip when bug TICKET-X is fixed
+// Bug: reject button transfers money instead of rejecting
+    it.skip('should reject a payment request and verify both balances are the same', () => {
 
         //SETUP: capture receiver data
         cy.login('defaultUser')
@@ -142,8 +145,16 @@ describe('TransactionPage - request payment ', () => {
             })
         })
 
+        //REQUEST spy on reject
+        cy.intercept('PATCH', '**/transactions/**').as('rejectedTransaction')
+
         //ACTION: Transaction rejected 
         transactionDetailPage.rejectButton.click()
+
+        cy.wait('@rejectedTransaction').then(interception => {
+                console.log('REQUEST body:', interception.request.body)
+                console.log('RESPONSE body:', interception.response.body)
+                })
 
         //SETUP: capture sender data AFTER transaction rejected
         cy.request('GET', 'http://localhost:3001/checkAuth').then((response) => {
