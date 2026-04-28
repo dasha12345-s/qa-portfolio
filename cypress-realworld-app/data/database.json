@@ -9855,19 +9855,6 @@
       "requestResolvedAt": "",
       "createdAt": "2023-11-10T07:15:28.127Z",
       "modifiedAt": "2024-03-07T21:58:09.668Z"
-    },
-    {
-      "id": "3fgGaJBHm",
-      "uuid": "b9168f64-00e2-4adf-8e47-f7abc0869680",
-      "amount": 1000,
-      "description": "want some more money",
-      "receiverId": "_XblMqbuoP",
-      "senderId": "_XblMqbuoP",
-      "privacyLevel": "contacts",
-      "status": "complete",
-      "requestStatus": "accepted",
-      "createdAt": "2026-04-27T18:51:00.646Z",
-      "modifiedAt": "2026-04-27T18:51:00.646Z"
     }
   ],
   "likes": [
@@ -10444,26 +10431,6 @@
       "isRead": false,
       "createdAt": "2024-02-01T18:53:45.699Z",
       "modifiedAt": "2024-03-07T17:13:52.110Z"
-    },
-    {
-      "id": "DCPEB4PVPq",
-      "uuid": "6996c873-dc3e-4bf9-a3f6-d84811b89f80",
-      "userId": "_XblMqbuoP",
-      "transactionId": "3fgGaJBHm",
-      "status": "requested",
-      "isRead": false,
-      "createdAt": "2026-04-27T18:51:00.652Z",
-      "modifiedAt": "2026-04-27T18:51:00.652Z"
-    },
-    {
-      "id": "hQWQ0pP06O",
-      "uuid": "166c89da-3766-4a41-8690-76d87109cd16",
-      "userId": "_XblMqbuoP",
-      "transactionId": "3fgGaJBHm",
-      "status": "received",
-      "isRead": false,
-      "createdAt": "2026-04-27T18:51:00.714Z",
-      "modifiedAt": "2026-04-27T18:51:00.714Z"
     }
   ],
   "banktransfers": [
