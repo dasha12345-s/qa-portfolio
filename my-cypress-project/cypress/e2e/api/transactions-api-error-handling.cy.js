@@ -87,7 +87,6 @@ describe('Transactions API - error handling', () => {
                     },
                     failOnStatusCode: false
                 }).then(response => {
-                    console.log(response.body)
                     expect(response.status).to.eq(422)
                     expect(response.body.errors).to.have.length(3)
                     expect(response.body.errors).to.deep.eq(expectedResponce)

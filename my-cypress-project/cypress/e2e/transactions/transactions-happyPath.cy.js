@@ -41,7 +41,6 @@ describe('Transactions Page flow - send payment', () => {
 
                 cy.get('@apiBalance').then((balance) => {
                     cy.log('The balance is: ' + balance);
-                    console.log(balance);
                 });
         })
 

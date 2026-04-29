@@ -25,7 +25,6 @@ jobs:
         if: failure()
         with:
           name: cypress-screenshots
-          # We must point to the folder inside your sub-directory
           path: saucedemo-full-suite/cypress/screenshots
           if-no-files-found: ignore
 
@@ -34,6 +33,41 @@ jobs:
         if: always()
         with:
           name: cypress-videos
-          # We must point to the folder inside your sub-directory
           path: saucedemo-full-suite/cypress/videos
+          if-no-files-found: ignore
+
+  cypress-realworld:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install app dependencies
+        run: yarn install
+        working-directory: cypress-realworld-app
+
+      - name: Run Cypress tests
+        uses: cypress-io/github-action@v6
+        with:
+          working-directory: my-cypress-project
+          browser: chrome
+          start: yarn --cwd ../cypress-realworld-app start
+          wait-on: 'http://localhost:3000, http://localhost:3001'
+          wait-on-timeout: 60
+
+      - name: Upload screenshots on failure
+        uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: cypress-realworld-screenshots
+          path: my-cypress-project/cypress/screenshots
+          if-no-files-found: ignore
+
+      - name: Upload videos
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: cypress-realworld-videos
+          path: my-cypress-project/cypress/videos
           if-no-files-found: ignore
