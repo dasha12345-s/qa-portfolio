@@ -34,17 +34,23 @@ describe('Login page - error messages', () => {
     })
 
     it('should throw an error if the username is invalid', () => {
-        cy.login('invalidUsername')
+        cy.fixture('users').then(users => {
+        loginPage.login(users.invalidUsername.username, users.invalidUsername.password)
         loginPage.errorMessage.should('be.visible')
+    })
     })
 
     it('should throw an error if the password is invalid', () => {
-        cy.login('invalidPassword')
+        cy.fixture('users').then(users => {
+        loginPage.login(users.invalidPassword.username, users.invalidPassword.password)
         loginPage.errorMessage.should('be.visible')
     })
 
     it('should throw an error if the password length is less than 4', () => {
-        cy.login('shortPassword', false)
-        loginPage.passwordLengthError.should('contain','Password must contain at least 4 characters')
+       cy.fixture('users').then(users => {
+        loginPage.password.type(users.shortPassword.password).blur()
+        loginPage.passwordLengthError.should('contain', 'Password must contain at least 4 characters')
+    })
+    })
     })
 })
