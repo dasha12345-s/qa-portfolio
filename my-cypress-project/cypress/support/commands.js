@@ -32,7 +32,7 @@ Cypress.Commands.add('signUp', (shouldClick = true) => {
     const uniqueUsername = `testuser_${Date.now()}`
     const staticPassword = 'password123'
 
-    cy.visit('/transaction/new')
+    cy.visit('/signup')
 
     signUpPage.lastName.type('TestUser').blur()
     signUpPage.firstName.type('Best').blur()
