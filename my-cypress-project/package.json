@@ -10,6 +10,7 @@
   "license": "ISC",
   "description": "",
   "devDependencies": {
+    "axios": "^1.15.2",
     "cypress": "^14.5.4"
   }
 }
