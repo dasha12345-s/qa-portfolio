@@ -48,4 +48,4 @@
 
 ## Contact
 
-[LinkedIn](https://linkedin.com/in/dasha12345-s) · [GitHub](https://github.com/dasha12345-s)
+[LinkedIn](https://www.linkedin.com/in/darya-shostak/) · [GitHub](https://github.com/dasha12345-s)
