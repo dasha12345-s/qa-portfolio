@@ -1,42 +1,48 @@
-# QA Portfolio — Darya Shostak
-
-Manual QA Engineer transitioning to Automation QA. This portfolio demonstrates Cypress test automation across two projects, covering UI testing, multi-user E2E flows, pure API testing, error handling, and CI/CD with GitHub Actions.
+# QA Automation Portfolio — Darya Shostak
 
 ![Cypress Tests](https://github.com/dasha12345-s/qa-portfolio/actions/workflows/cypress.yml/badge.svg)
+
+**QA Engineer** · Cypress · JavaScript · API Testing · CI/CD · Page Object Model
 
 ---
 
 ## Projects
 
-### [Cypress Real World App Test Suite](./my-cypress-project)
-A full automation suite built against [cypress-realworld-app](https://github.com/cypress-io/cypress-realworld-app) — a full-stack payment application. Tests run against a real Express backend on localhost with GitHub Actions spinning up the app in CI.
+### [Cypress Real World App — Full Test Suite](./my-cypress-project)
 
-**Highlights:**
-- Multi-user E2E transaction flows (send payment, request money, accept/reject)
-- Pure API tests against the Express backend using `cy.request()`
-- API error handling tests (401, 422, 404)
-- 4 real backend bugs found and documented with `it.skip()`
-- `cy.session()` for cached login state with db:seed compatibility
-- Page Object Model across 6 page classes
+> End-to-end and API automation suite against a production-grade full-stack payment application (React + Express + SQLite). Tests run in GitHub Actions CI with the app spun up from source on every push.
 
-### [Saucedemo Full Suite](./saucedemo-full-suite)
-A comprehensive Cypress test suite for [saucedemo.com](https://www.saucedemo.com) — a demo e-commerce site. 34 tests covering login, product pages, cart, checkout, and sorting.
+| Area | Coverage |
+|------|----------|
+| Authentication | Login, sign-up, session management |
+| Transaction Flows | Send payment, request money, accept/reject — multi-user E2E |
+| API Testing | POST, PATCH, GET against Express REST backend |
+| Error Handling | 401 Unauthorized, 422 Validation, 404 Not Found |
+| Bug Detection | 4 backend bugs found, confirmed, and documented |
 
-**Highlights:**
-- Page Object Model pattern
-- API intercepting and stubbing with `cy.intercept()`
-- Data-driven testing using JSON fixtures
-- CI/CD with GitHub Actions
+**Key techniques:** `cy.session()` · `cy.intercept()` · `cy.request()` · `db:seed` task · Page Object Model · `deep.eq` array assertions · `it.skip()` bug documentation
+
+---
+
+### [Saucedemo — E2E Test Suite](./saucedemo-full-suite)
+
+> 34-test Cypress suite covering the full user journey on a demo e-commerce platform. Includes data-driven testing, API stubbing, and artifact reporting in CI.
+
+**Key techniques:** Page Object Model · `cy.intercept()` stubbing · JSON fixtures · GitHub Actions · Screenshot and video artifacts
+
+---
+
+### [Login Form — Manual QA Documentation](./loginForm)
+
+> Comprehensive manual testing artefacts demonstrating QA fundamentals: test planning, structured test design, bug reporting, and API validation.
+
+**Includes:** Test plan · Bug reports · Equivalence partitioning · Boundary value analysis · Decision table · State transition · Security checklist · Traceability matrix · Postman collection
 
 ---
 
 ## Tech Stack
 
-- **Cypress** — E2E and API testing
-- **JavaScript (ES6+)** — test logic and custom commands
-- **GitHub Actions** — CI/CD pipeline
-- **Node.js / Express** — backend under test
-- **Page Object Model** — selector management
+`Cypress` `JavaScript ES6+` `Node.js` `GitHub Actions` `REST API` `Postman` `Page Object Model` `CI/CD`
 
 ---
 
