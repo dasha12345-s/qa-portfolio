@@ -11,7 +11,7 @@
       "phoneNumber": "398-225-9900",
       "avatar": "https://avatars.dicebear.com/api/human/uBmeaz5pX.svg",
       "defaultPrivacyLevel": "public",
-      "balance": 151453,
+      "balance": 150653,
       "createdAt": "2023-03-09T22:26:40.101Z",
       "modifiedAt": "2024-03-07T10:07:57.580Z"
     },
@@ -41,7 +41,7 @@
       "phoneNumber": "887-309-1593",
       "avatar": "https://avatars.dicebear.com/api/human/_XblMqbuoP.svg",
       "defaultPrivacyLevel": "contacts",
-      "balance": 158380,
+      "balance": 159180,
       "createdAt": "2023-05-21T05:01:54.594Z",
       "modifiedAt": "2024-03-07T14:11:52.161Z"
     },
@@ -9857,17 +9857,16 @@
       "modifiedAt": "2024-03-07T21:58:09.668Z"
     },
     {
-      "id": "I33IJ7vP3",
-      "uuid": "864c0cba-7115-4df3-a4f7-50075622abd6",
-      "amount": 500,
-      "description": "money request!",
+      "id": "CCednEngX",
+      "uuid": "ae22a4ad-dd10-4e26-b163-dc0b44c5a749",
+      "amount": 300,
+      "description": "here you go-auto",
       "receiverId": "_XblMqbuoP",
       "senderId": "uBmeaz5pX",
       "privacyLevel": "public",
       "status": "complete",
-      "requestStatus": "accepted",
-      "createdAt": "2026-04-29T19:08:53.699Z",
-      "modifiedAt": "2026-04-29T19:08:53.699Z"
+      "createdAt": "2026-05-12T15:58:07.148Z",
+      "modifiedAt": "2026-05-12T15:58:07.148Z"
     }
   ],
   "likes": [
@@ -10446,24 +10445,14 @@
       "modifiedAt": "2024-03-07T17:13:52.110Z"
     },
     {
-      "id": "qJ8ca0Z8k-",
-      "uuid": "01a61a93-9081-45ea-b5bc-fb3bf7830602",
+      "id": "06uhSgAGpL",
+      "uuid": "a0c6e79f-dacc-4249-a80a-20df81dcf5a2",
       "userId": "_XblMqbuoP",
-      "transactionId": "I33IJ7vP3",
-      "status": "requested",
-      "isRead": false,
-      "createdAt": "2026-04-29T19:08:53.702Z",
-      "modifiedAt": "2026-04-29T19:08:53.702Z"
-    },
-    {
-      "id": "jNY3ceqNo",
-      "uuid": "833a0f81-8fdc-4b40-b7e7-b187c32d8966",
-      "userId": "uBmeaz5pX",
-      "transactionId": "I33IJ7vP3",
+      "transactionId": "CCednEngX",
       "status": "received",
       "isRead": false,
-      "createdAt": "2026-04-29T19:08:55.115Z",
-      "modifiedAt": "2026-04-29T19:08:55.115Z"
+      "createdAt": "2026-05-12T15:58:07.162Z",
+      "modifiedAt": "2026-05-12T15:58:07.162Z"
     }
   ],
   "banktransfers": [
