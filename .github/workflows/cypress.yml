@@ -17,7 +17,7 @@ jobs:
       - name: Run Cypress tests
         uses: cypress-io/github-action@v6
         with:
-          working-directory: saucedemo-full-suite
+          working-directory: saucedemo-full-suite-cypress
           browser: chrome
 
       - name: Upload screenshots on failure
