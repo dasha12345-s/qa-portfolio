@@ -1,5 +1,5 @@
-import { test, expect } from './fixtures';
-import { LoginPage } from './pages/loginPage';
+import { test, expect } from '../fixtures';
+import { LoginPage } from '../pages/loginPage';
 
 let loginPage: LoginPage;
 

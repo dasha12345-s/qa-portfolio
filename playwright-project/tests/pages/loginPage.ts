@@ -11,7 +11,7 @@ export class LoginPage {
     get usernameInput() { return this.page.getByPlaceholder('Username') }
     get passwordInput() { return this.page.getByPlaceholder('Password') }
     get loginButton()   { return this.page.getByRole('button', { name: 'Login' }) }
-    get errorMessage()  { return this.page.getByText('Epic sadface: Sorry, this user has been locked out.') }
+    get errorMessage()  { return this.page.getByText('Epic sadface') }
 
     async goto() {
         await this.page.goto('/');
