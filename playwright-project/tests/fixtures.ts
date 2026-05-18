@@ -1,5 +1,4 @@
-import { test as base } from '@playwright/test';
-import { Page } from '@playwright/test';
+import { test as base, expect, Page} from '@playwright/test';
 
 type MyFixtures = {
     loggedInPage: Page;
@@ -8,27 +7,27 @@ type MyFixtures = {
 }
 
 export const test = base.extend<MyFixtures>({
-    loggedInPage: async ({ page }, use ) => {
-        await page.goto('/');
-        await page.getByPlaceholder('Username').fill('standard_user');
-        await page.getByPlaceholder('Password').fill('secret_sauce');
-        await page.getByRole('button', { name: 'Login' }).click();
+    loggedInPage: async ({ browser }, use ) => {
+        const context = await browser.newContext({ storageState: 'playwright/.auth/standard-user.json' });
+        const page = await context.newPage();
+        await page.goto('/inventory.html');
         await use(page);
+        await context.close();
     },
-    problemUserPage: async ({ page }, use) => {
-        await page.goto('/');
-        await page.getByPlaceholder('Username').fill('problem_user');
-        await page.getByPlaceholder('Password').fill('secret_sauce');
-        await page.getByRole('button', { name: 'Login' }).click();
+    problemUserPage: async ({ browser }, use) => {
+        const context = await browser.newContext({ storageState: 'playwright/.auth/problem-user.json' });
+        const page = await context.newPage();
+        await page.goto('/inventory.html');
         await use(page);
+        await context.close();
     },
-    performanceGlitchUserPage: async ({ page }, use) => {
-        await page.goto('/');
-        await page.getByPlaceholder('Username').fill('performance_glitch_user');
-        await page.getByPlaceholder('Password').fill('secret_sauce');
-        await page.getByRole('button', { name: 'Login' }).click();
+    performanceGlitchUserPage: async ({ browser }, use) => {
+        const context = await browser.newContext({ storageState: 'playwright/.auth/perf-glitch-user.json' });
+        const page = await context.newPage();
+        await page.goto('/inventory.html');
         await use(page);
-    }
+        await context.close();
+    },
 });
 
 export {expect} from '@playwright/test';
