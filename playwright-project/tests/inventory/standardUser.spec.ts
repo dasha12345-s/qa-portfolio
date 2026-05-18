@@ -42,15 +42,26 @@ test.describe('Inventory Page - Standard User', () => {
     })
 
     test('adding all items should show badge count of "all items number"', async () => {
-        const addToCartButtons = await inventoryPage.addToCart.count();
 
-        await expect(inventoryPage.cartBadge).toBeHidden();
+        let addToCartButtons = 0;
 
-        for (let i = 0; i < addToCartButtons; i++) {
+        await test.step('count available ass-to-cart buttons', async () => {
+            addToCartButtons = await inventoryPage.addToCart.count();
+        })
+        
+        await test.step('verify cart badge is hidden before adding items', async () => {
+              await expect(inventoryPage.cartBadge).toBeHidden();
+        })
+
+        await test.step('Add all inventory items to cart', async () => {
+            for (let i = 0; i < addToCartButtons; i++) {
             await inventoryPage.addToCart.nth(0).click();
-        }
+            }
+        });
 
-        await expect(inventoryPage.cartBadge).toHaveText(String(addToCartButtons));
+        await test.step('Verify cart badge shows total number of added items', async () => {
+             await expect(inventoryPage.cartBadge).toHaveText(String(addToCartButtons));
+        })
     })
 })
 
