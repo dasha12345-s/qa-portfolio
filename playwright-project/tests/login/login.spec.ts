@@ -24,7 +24,7 @@ test('login button should be visible', async () => {
     await expect(loginPage.loginButton).toBeVisible();
 });
 
-test('should login successfully with valid credentials', async ({ loggedInPage }) => {
+test('should login successfully with valid credentials', { tag: '@smoke' }, async ({ loggedInPage }) => {
     await expect(loggedInPage).toHaveURL('/inventory.html');
 })
 
