@@ -8,21 +8,21 @@ type MyFixtures = {
 
 export const test = base.extend<MyFixtures>({
     loggedInPage: async ({ browser }, use ) => {
-        const context = await browser.newContext({ storageState: 'playwright/.auth/standard-user.json' });
+        const context = await browser.newContext({ storageState: 'playwright-project/.auth/standard-user.json' });
         const page = await context.newPage();
         await page.goto('/inventory.html');
         await use(page);
         await context.close();
     },
     problemUserPage: async ({ browser }, use) => {
-        const context = await browser.newContext({ storageState: 'playwright/.auth/problem-user.json' });
+        const context = await browser.newContext({ storageState: 'playwright-project/.auth/problem-user.json' });
         const page = await context.newPage();
         await page.goto('/inventory.html');
         await use(page);
         await context.close();
     },
     performanceGlitchUserPage: async ({ browser }, use) => {
-        const context = await browser.newContext({ storageState: 'playwright/.auth/perf-glitch-user.json' });
+        const context = await browser.newContext({ storageState: 'playwright-project/.auth/perf-glitch-user.json' });
         const page = await context.newPage();
         await page.goto('/inventory.html');
         await use(page);

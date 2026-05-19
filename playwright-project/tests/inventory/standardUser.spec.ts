@@ -7,7 +7,6 @@ test.describe('Inventory Page - Standard User', () => {
 
     test.beforeEach(async ({ loggedInPage }) => {
         inventoryPage = new InventoryPage(loggedInPage);
-        await loggedInPage.waitForURL(/inventory.html/);
     })
 
     test('should show shopping cart', async () => {
@@ -30,9 +29,9 @@ test.describe('Inventory Page - Standard User', () => {
         const items = await inventoryPage.inventoryItem.all()
 
         for (const item of items) {
-            await expect(item.getByTestId('inventory-item-name')).toBeVisible();
-            await expect(item.getByTestId('inventory-item-price')).toBeVisible();
-            await expect(item.locator('button')).toBeVisible(); 
+            await expect.soft(item.getByTestId('inventory-item-name')).toBeVisible();
+            await expect.soft(item.getByTestId('inventory-item-price')).toBeVisible();
+            await expect.soft(item.locator('button')).toBeVisible(); 
         }
     })
 

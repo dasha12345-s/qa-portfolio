@@ -7,7 +7,6 @@ test.describe('Inventory Page - Problem User', () => {
 
 test.beforeEach(async ({problemUserPage}) => {
     inventoryPage = new InventoryPage(problemUserPage);
-    await problemUserPage.waitForURL('/inventory.html');
 })
 
 test.fail('all product images show the same broken image (bug)', async ({}) => {
