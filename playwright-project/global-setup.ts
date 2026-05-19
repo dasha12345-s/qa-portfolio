@@ -2,7 +2,7 @@ import { chromium } from '@playwright/test';
 import * as fs from 'fs';
 import { LoginPage } from './tests/pages/loginPage';
 
-const AUTH_DIR = 'playwright/.auth';
+const AUTH_DIR = 'playwright-project/.auth';
 const BASE_URL = 'https://www.saucedemo.com';
 const PASSWORD = 'secret_sauce';
 
