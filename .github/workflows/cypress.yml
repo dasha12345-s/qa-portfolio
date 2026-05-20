@@ -50,9 +50,9 @@ jobs:
       - name: Run Cypress tests
         uses: cypress-io/github-action@v6
         with:
-          working-directory: my-cypress-project
+          working-directory: cypresRealWorldAppTests
           browser: chrome
-          start: yarn --cwd ../cypress-realworld-app start
+          start: yarn --cwd ../cypresRealWorldAppTests start
           wait-on: 'http://localhost:3000, http://localhost:3001'
           wait-on-timeout: 60
 
