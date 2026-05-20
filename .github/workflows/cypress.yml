@@ -52,7 +52,7 @@ jobs:
         with:
           working-directory: cypressRealWorldAppTests
           browser: chrome
-          start: yarn --cwd ../cypressRealWorldAppTests start
+          start: yarn --cwd ../cypress-realworld-app dev
           wait-on: 'http://localhost:3000, http://localhost:3001'
           wait-on-timeout: 60
 
@@ -61,7 +61,7 @@ jobs:
         if: failure()
         with:
           name: cypress-realworld-screenshots
-          path: my-cypress-project/cypress/screenshots
+          path: cypressRealWorldAppTests/cypress/screenshots
           if-no-files-found: ignore
 
       - name: Upload videos
@@ -69,5 +69,5 @@ jobs:
         if: always()
         with:
           name: cypress-realworld-videos
-          path: my-cypress-project/cypress/videos
+          path: cypressRealWorldAppTests/cypress/videos
           if-no-files-found: ignore
