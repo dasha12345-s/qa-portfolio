@@ -6,11 +6,11 @@ async function globalSetup() {
     const context = await browser.newContext();
     const page = await context.newPage();
 
-    await page.goto('http://localhost:3004/signin');
+    await page.goto('http://localhost:3000/signin');
     await page.getByTestId('signin-username').fill('Heath93');
     await page.getByTestId('signin-password').fill('s3cret');
     await page.getByTestId('signin-submit').click();
-    await page.waitForURL('http://localhost:3004/');
+    await page.waitForURL('http://localhost:3000/');
 
     await context.storageState({ path:
         path.resolve('.auth/user.json')});
