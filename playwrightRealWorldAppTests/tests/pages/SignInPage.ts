@@ -8,10 +8,10 @@ export class SignInPage {
     }
 
     get heading() { return this.page.getByRole('heading', { name: 'Sign in' }) }
-    get username() {return this.page.getByPlaceholder('Username')}
-    get password() {return this.page.getByPlaceholder('Password')}
+    get username() {return this.page.getByRole('textbox', { name: 'Username' })}
+    get password() {return this.page.getByRole('textbox', { name: 'Password' })}
     get signInButton() {return this.page.getByRole('button', { name: 'Sign in' })}
-    get signUpLink() {return this.page.getByTestId('signup')}
+    get signUpLink() {return this.page.locator('[data-test="signup"]')}
     get rememberMeCheckbox() {return this.page.getByTestId('signin-remember-me')}
     get errorMessagePasswordLength() {return this.page.getByText('Password must contain at least 4 characters')}
     get errorMessageInvalidCredentials() {return this.page.getByText('Username or password is invalid')}

@@ -7,9 +7,10 @@ async function globalSetup() {
     const page = await context.newPage();
 
     await page.goto('http://localhost:3000/signin');
-    await page.getByTestId('signin-username').fill('Heath93');
-    await page.getByTestId('signin-password').fill('s3cret');
-    await page.getByTestId('signin-submit').click();
+    await page.waitForLoadState('networkidle');
+    await page.getByRole('textbox', { name: 'Username' }).fill('Heath93');
+    await page.getByRole('textbox', { name: 'Password' }).fill('s3cret');
+    await page.getByRole('button', { name: 'Sign in' }).click();
     await page.waitForURL('http://localhost:3000/');
 
     await context.storageState({ path:
