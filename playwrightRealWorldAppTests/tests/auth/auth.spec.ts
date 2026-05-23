@@ -67,12 +67,9 @@ test.describe("Sign In Page", () => {
   });
 
   test.describe("sign up link navigation", () => {
-    test("should navigate to sign up page when clicking on sign up link", async ({
-      page,
-    }) => {
+    test("should navigate to sign up page when clicking on sign up link", async ({ page }) => {
       await signInPage.signUpLink.evaluate((el) =>
-        (el as HTMLAnchorElement).click(),
-      );
+        (el as HTMLAnchorElement).click());
       await expect(page).toHaveURL("/signup");
     });
   });
