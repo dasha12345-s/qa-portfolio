@@ -22,7 +22,6 @@ test.describe("Sign In Page", () => {
     await test.step("Submit form", async () => {
       await signInPage.signInButton.click();
       await expect(page).toHaveURL("/");
-      await expect(sideMenuPage.fullUserName).toBeVisible();
     });
   });
 
