@@ -12,9 +12,14 @@ export class HomePage{
     get personalTransactions() {return this.page.getByTestId('nav-personal-tab')}
     get newTransactionButton() {return this.page.getByTestId('nav-top-new-transaction')}
     get notificationButton() {return this.page.getByTestId('nav-top-notifications-link')}
-    get navToggle() {return this.page.getByTestId('nav-toggle')}
+    get navToggle() {return this.page.locator('[data-test="sidenav-toggle"]')}
+    get transactionList() { return this.page.getByTestId('transaction-list') }
     get dateFilter() { return this.page.getByTestId('transaction-list-filter-date-range-button')}
+    get dateRange() {return this.page.locator('[data-test="transaction-list-filter-date-range"]')}
+    get amountSlider() {return this.page.locator('[data-test="transaction-list-filter-amount-range-slider"]')}
     get amountFilter() { return this.page.getByTestId('transaction-list-filter-amount-range-button')}
+    get sideBar() {return this.page.locator('[data-test="sidenav"]')}
+    get sideBarPaper() { return this.page.locator('.MuiDrawer-paper') }
 
     async goto() {
         await this.page.goto('/');
