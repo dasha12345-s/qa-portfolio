@@ -49,11 +49,15 @@ test.describe("Transaction Feeds", () => {
   });
 
   test.describe("Navigation menu", () => {
-    test("navigation menu should be open by default", async () => {
+    test("navigation menu should be open by default", async ({ isMobile }) => {
+      test.skip(isMobile, "Sidebar hidden by default on mobile");
       await expect(homePage.sideBar).toBeVisible();
     });
 
-    test("should close navigation menu when clicking on nav toggle", async () => {
+    test("should close navigation menu when clicking on nav toggle", async ({
+      isMobile,
+    }) => {
+      test.skip(isMobile, "Sidebar hidden by default on mobile");
       await homePage.navToggle.click();
       await expect(homePage.sideBarPaper).toHaveCSS("visibility", "hidden");
     });
