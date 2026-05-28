@@ -4,6 +4,7 @@ export default defineConfig({
       testDir: './tests',
       globalSetup: './global-setup',
       fullyParallel: true,
+      workers: 1,
       retries: process.env.CI ? 2 : 0,
       reporter: 'html',
         use: {

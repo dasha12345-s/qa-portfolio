@@ -12,7 +12,7 @@ test.describe("New Transaction", () => {
 
     await homePage.newTransactionButton.click();
     await newTransactionPage.searchInput.fill("Dina20");
-    await newTransactionPage.userListItem.first().click();
+    await newTransactionPage.userListItem.filter({ hasText: "Dina20" }).click();
   });
 
   test("Send a payment", async () => {
