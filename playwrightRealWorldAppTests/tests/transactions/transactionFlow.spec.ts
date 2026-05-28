@@ -2,6 +2,7 @@ import { test, expect } from "../../fixtures";
 import { NewTransactionPage } from "../pages/NewTransactionPage";
 import { TransactionDetailPage } from "../pages/TransactionDetailPage";
 import { HomePage } from "../pages/HomePage";
+import { getBalance } from "../helpers";
 
 test.describe("Transaction Page flow - send payment", () => {
   test.describe.configure({ mode: "serial" });
@@ -31,26 +32,10 @@ test.describe("Transaction Page flow - send payment", () => {
     let transactionId: string;
 
     await test.step("should capture user2's balance", async () => {
-      const response = await secondUserPage.request.get(
-        "http://localhost:3001/checkAuth",
-      );
-      const { user } = await response.json();
-      const userRes = await secondUserPage.request.get(
-        `http://localhost:3001/users/${user.id}`,
-      );
-      const body = await userRes.json();
-      user2Balance = body.user.balance;
+      user2Balance = await getBalance(secondUserPage);
     });
     await test.step("should capture user1's balance", async () => {
-      const response = await loggedInPage.request.get(
-        "http://localhost:3001/checkAuth",
-      );
-      const { user } = await response.json();
-      const userRes = await loggedInPage.request.get(
-        `http://localhost:3001/users/${user.id}`,
-      );
-      const body = await userRes.json();
-      user1Balance = body.user.balance;
+      user1Balance = await getBalance(loggedInPage);
     });
     await test.step("should make payment and capture transaction data", async () => {
       const responsePromise = loggedInPage.waitForResponse(
@@ -76,28 +61,11 @@ test.describe("Transaction Page flow - send payment", () => {
     });
 
     await test.step("should verify that user1's balance decreased", async () => {
-      const response = await loggedInPage.request.get(
-        "http://localhost:3001/checkAuth",
-      );
-      const { user } = await response.json();
-
-      const res = await loggedInPage.request.get(
-        `http://localhost:3001/users/${user.id}`,
-      );
-      const body = await res.json();
-      expect(body.user.balance).toBe(user1Balance - 500);
+      expect(await getBalance(loggedInPage)).toBe(user1Balance - 500);
     });
 
     await test.step("should verify that user2's balance increased", async () => {
-      const response = await secondUserPage.request.get(
-        "http://localhost:3001/checkAuth",
-      );
-      const { user } = await response.json();
-      const res = await secondUserPage.request.get(
-        `http://localhost:3001/users/${user.id}`,
-      );
-      const body = await res.json();
-      expect(body.user.balance).toBe(user2Balance + 500);
+      expect(await getBalance(secondUserPage)).toBe(user2Balance + 500);
     });
     await test.step("should verify that user2 received the transaction created by user1", async () => {
       const response = await secondUserPage.request.get(
@@ -142,26 +110,10 @@ test.describe("Transaction Page flow - request payment", () => {
     let transactionId: string;
 
     await test.step("should capture user1's balance", async () => {
-      const response = await loggedInPage.request.get(
-        "http://localhost:3001/checkAuth",
-      );
-      const { user } = await response.json();
-      const userRes = await loggedInPage.request.get(
-        `http://localhost:3001/users/${user.id}`,
-      );
-      const body = await userRes.json();
-      user1Balance = body.user.balance;
+      user1Balance = await getBalance(loggedInPage);
     });
     await test.step("should capture user2's balance", async () => {
-      const response = await secondUserPage.request.get(
-        "http://localhost:3001/checkAuth",
-      );
-      const { user } = await response.json();
-      const userRes = await secondUserPage.request.get(
-        `http://localhost:3001/users/${user.id}`,
-      );
-      const body = await userRes.json();
-      user2Balance = body.user.balance;
+      user2Balance = await getBalance(secondUserPage);
     });
     await test.step("user1 should make a request and capture transaction data", async () => {
       const responsePromise = loggedInPage.waitForResponse(
@@ -196,28 +148,10 @@ test.describe("Transaction Page flow - request payment", () => {
       await expect(user2TransactionDetail.rejectRequestButton).toBeHidden();
     });
     await test.step("should verify that user2's balance decreased by N", async () => {
-      const response = await secondUserPage.request.get(
-        "http://localhost:3001/checkAuth",
-      );
-      const { user } = await response.json();
-
-      const res = await secondUserPage.request.get(
-        `http://localhost:3001/users/${user.id}`,
-      );
-      const body = await res.json();
-      expect(body.user.balance).toBe(user2Balance - 500);
+       expect(await getBalance(secondUserPage)).toBe(user2Balance - 500);
     });
     await test.step("should verify that user1's balance increased by N", async () => {
-      const response = await loggedInPage.request.get(
-        "http://localhost:3001/checkAuth",
-      );
-      const { user } = await response.json();
-
-      const res = await loggedInPage.request.get(
-        `http://localhost:3001/users/${user.id}`,
-      );
-      const body = await res.json();
-      expect(body.user.balance).toBe(user1Balance + 500);
+      expect(await getBalance(loggedInPage)).toBe(user1Balance + 500);
     });
   });
   test("should reject a payment request and verify both balances are the same", async ({
@@ -236,26 +170,10 @@ test.describe("Transaction Page flow - request payment", () => {
     let transactionId: string;
 
     await test.step("should capture user2's balance", async () => {
-      const response = await secondUserPage.request.get(
-        "http://localhost:3001/checkAuth",
-      );
-      const { user } = await response.json();
-      const userRes = await secondUserPage.request.get(
-        `http://localhost:3001/users/${user.id}`,
-      );
-      const body = await userRes.json();
-      user2Balance = body.user.balance;
+      user2Balance = await getBalance(secondUserPage);
     });
     await test.step("should capture user1's balance", async () => {
-      const response = await loggedInPage.request.get(
-        "http://localhost:3001/checkAuth",
-      );
-      const { user } = await response.json();
-      const userRes = await loggedInPage.request.get(
-        `http://localhost:3001/users/${user.id}`,
-      );
-      const body = await userRes.json();
-      user1Balance = body.user.balance;
+      user1Balance = await getBalance(loggedInPage);
     });
     await test.step("user1 should make a request and capture transaction data", async () => {
       const responsePromise = loggedInPage.waitForResponse(
@@ -290,28 +208,10 @@ test.describe("Transaction Page flow - request payment", () => {
       await expect(user2TransactionDetail.rejectRequestButton).toBeHidden();
     });
     await test.step("should verify that user2's balance wasn't changed", async () => {
-      const response = await secondUserPage.request.get(
-        "http://localhost:3001/checkAuth",
-      );
-      const { user } = await response.json();
-
-      const res = await secondUserPage.request.get(
-        `http://localhost:3001/users/${user.id}`,
-      );
-      const body = await res.json();
-      expect(body.user.balance).toBe(user2Balance);
+     expect(await getBalance(secondUserPage)).toBe(user2Balance);
     });
     await test.step("should verify that user1's balance wasn't changed", async () => {
-      const response = await loggedInPage.request.get(
-        "http://localhost:3001/checkAuth",
-      );
-      const { user } = await response.json();
-
-      const res = await loggedInPage.request.get(
-        `http://localhost:3001/users/${user.id}`,
-      );
-      const body = await res.json();
-      expect(body.user.balance).toBe(user1Balance);
+      expect(await getBalance(loggedInPage)).toBe(user1Balance);
     });
   });
 });
