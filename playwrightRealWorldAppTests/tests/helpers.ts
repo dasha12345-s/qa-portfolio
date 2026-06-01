@@ -1,5 +1,4 @@
-import { Page } from "@playwright/test";
-import {APIRequestContext} from "@playwright/test";
+import {Page, APIRequestContext} from "@playwright/test";
 
 export async function getBalance(page:Page): Promise<number> {
      const response = await page.request.get(
