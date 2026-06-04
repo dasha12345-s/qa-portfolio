@@ -1,16 +1,14 @@
 import { expect, test } from "@playwright/test";
 import { SignInPage } from "../pages/SignInPage";
-import { SideMenuPage } from "../pages/SideMenuPage";
 
 test.use({ storageState: { cookies: [], origins: [] } });
 
 test.describe("Sign In Page", () => {
   let signInPage: SignInPage;
-  let sideMenuPage: SideMenuPage;
+ 
 
   test.beforeEach(async ({ page }) => {
     signInPage = new SignInPage(page);
-    sideMenuPage = new SideMenuPage(page);
     await signInPage.goto();
   });
 
@@ -26,13 +24,14 @@ test.describe("Sign In Page", () => {
   });
 
   test.describe("empty field validation", async () => {
-    test("should show error message for empty username", async () => {
+    test("should show error message for empty username", { tag: "@regression" }, async () => {
       await signInPage.username.click();
       await signInPage.password.click();
       await expect.soft(signInPage.signInButton).toBeDisabled();
       await expect(signInPage.errorMessageUsernameRequired).toBeVisible();
     });
-    test.fixme("should show error message for empty password", async () => {
+    test("should show error message for empty password", { tag: "@regression" }, async () => {
+      test.fail(true, "Known bug: empty password field does not show 'Password is required' error message")
       await signInPage.password.click();
       await signInPage.username.click();
       await expect.soft(signInPage.signInButton).toBeDisabled();
@@ -40,14 +39,14 @@ test.describe("Sign In Page", () => {
     });
   });
 
-  test.describe("invalid credentials validation", async () => {
-    test("should show error message for invalid username", async () => {
+  test.describe("invalid credentials validation",async () => {
+    test("should show error message for invalid username",  { tag: "@regression" },  async () => {
       await signInPage.username.fill("invalidUser");
       await signInPage.password.fill("s3cret");
       await signInPage.signInButton.click();
       await expect(signInPage.errorMessageInvalidCredentials).toBeVisible();
     });
-    test("should show error message for invalid password", async () => {
+    test("should show error message for invalid password", { tag: "@regression" }, async () => {
       await signInPage.username.fill("Heath93");
       await signInPage.password.fill("wrongPassword");
       await signInPage.signInButton.click();
@@ -56,7 +55,7 @@ test.describe("Sign In Page", () => {
   });
 
   test.describe("password length validation", async () => {
-    test("should show error message for password less than 4 characters", async () => {
+    test("should show error message for password less than 4 characters", { tag: "@regression" }, async () => {
       await signInPage.username.fill("Heath93");
       await signInPage.password.fill("123");
       await signInPage.username.click();
@@ -65,8 +64,8 @@ test.describe("Sign In Page", () => {
     });
   });
 
-  test.describe("sign up link navigation", () => {
-    test("should navigate to sign up page when clicking on sign up link", async ({ page }) => {
+  test.describe("sign up link navigation", async () => {
+    test("should navigate to sign up page when clicking on sign up link",  { tag: "@regression" }, async ({ page }) => {
       await signInPage.signUpLink.evaluate((el) =>
         (el as HTMLAnchorElement).click());
       await expect(page).toHaveURL("/signup");

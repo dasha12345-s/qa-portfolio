@@ -11,7 +11,7 @@ test.describe("Sign Up Page", () => {
     await signUpPage.goto();
   });
 
-  test("successful registration",{ tag: "@smoke" }, async ({page}) => {
+  test("successful registration", { tag: "@smoke" }, async ({page}) => {
     await test.step("Fill in registration form", async () => {
 
       const username = `user_${Date.now()}`;
@@ -30,31 +30,31 @@ test.describe("Sign Up Page", () => {
   });
 
   test.describe("empty field validation", () => {
-    test("should show error message for empty first name", async () => {
+    test("should show error message for empty first name",  { tag: "@regression" },  async () => {
       await signUpPage.firstName.click();
       await signUpPage.lastName.click();
       await expect.soft(signUpPage.signUpButton).toBeDisabled();
       await expect(signUpPage.errorMessageFirstNameRequired).toBeVisible();
     });
-    test("should show error message for empty last name", async () => {
+    test("should show error message for empty last name",  { tag: "@regression" },  async () => {
       await signUpPage.lastName.click();
       await signUpPage.firstName.click();
       await expect.soft(signUpPage.signUpButton).toBeDisabled();
       await expect(signUpPage.errorMessageLastNameRequired).toBeVisible();
     });
-    test("should show error message for empty username", async () => {
+    test("should show error message for empty username",  { tag: "@regression" },  async () => {
       await signUpPage.username.click();
       await signUpPage.firstName.click();
       await expect.soft(signUpPage.signUpButton).toBeDisabled();
       await expect(signUpPage.errorMessageUsernameRequired).toBeVisible();
     });
-    test("should show error message for empty password", async () => {
+    test("should show error message for empty password",  { tag: "@regression" },  async () => {
       await signUpPage.password.click();
       await signUpPage.firstName.click();
       await expect.soft(signUpPage.signUpButton).toBeDisabled();
       await expect(signUpPage.errorMessagePasswordRequired).toBeVisible();
     });
-    test("should show error message for empty confirm password", async () => {
+    test("should show error message for empty confirm password", { tag: "@regression" }, async () => {
       await signUpPage.confirmPassword.click();
       await signUpPage.firstName.click();
       await expect.soft(signUpPage.signUpButton).toBeDisabled();
@@ -63,12 +63,12 @@ test.describe("Sign Up Page", () => {
   });
 
   test.describe("password validation", () => {
-    test("should show error message for password less than 4 characters", async () => {
+    test("should show error message for password less than 4 characters", { tag: "@regression" }, async () => {
       await signUpPage.password.fill("123");
       await signUpPage.confirmPassword.fill("123");
       await expect(signUpPage.errorMessagePasswordLength).toBeVisible();
     });
-    test("should show error message when password and confirm password do not match", async () => {
+    test("should show error message when password and confirm password do not match", { tag: "@regression" }, async () => {
       await signUpPage.password.fill("s3cret");
       await signUpPage.confirmPassword.fill("different");
       await expect(signUpPage.errorMessagePasswordsDoNotMatch).toBeVisible();
@@ -76,7 +76,7 @@ test.describe("Sign Up Page", () => {
   });
 
   test.describe("sign in link navigation", () => {
-    test("should navigate to sign in page when clicking on sign in link", async ({ page }) => {
+    test("should navigate to sign in page when clicking on sign in link", { tag: "@regression" }, async ({ page }) => {
       await signUpPage.signInLink.evaluate((el) => 
         (el as HTMLAnchorElement).click());
       await expect(page).toHaveURL("/signin");

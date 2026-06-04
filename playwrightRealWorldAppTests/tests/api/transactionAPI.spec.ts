@@ -50,7 +50,7 @@ test.describe("Transaction API tests", () => {
       expect(body.transaction.receiverId).toBe(user2Id);
       expect(body.transaction.description).toBe("Test payment");
     });
-    test("GET /transactions/:id - should return the transaction details", async () => {
+    test("GET /transactions/:id - should return the transaction details",  { tag: "@smoke" }, async () => {
       const response = await apiContext.post("/transactions", {
         data: {
           transactionType: "payment",
@@ -73,7 +73,7 @@ test.describe("Transaction API tests", () => {
   });
 
   test.describe("API transaction flow - request payment", () => {
-    test("POST /transactions - should request a payment and return status pending", async () => {
+    test("POST /transactions - should request a payment and return status pending", { tag: "@regression" }, async () => {
       const response = await apiContext.post("/transactions", {
         data: {
           transactionType: "request",
@@ -91,7 +91,7 @@ test.describe("Transaction API tests", () => {
       expect(body.transaction.receiverId).toBe(user2Id);
       expect(body.transaction.description).toBe("Test payment request");
     });
-    test("PATCH /transactions/:id/accept - should accept the payment request and return status complete", async () => {
+    test("PATCH /transactions/:id/accept - should accept the payment request and return status complete", { tag: "@regression" }, async () => {
       let transactionId: string;
 
       await test.step("should create a payment request", async () => {
@@ -130,7 +130,7 @@ test.describe("Transaction API tests", () => {
         expect(getBody.transaction.status).toBe("complete");
       });
     });
-    test("PATCH /transactions/:id/reject - should reject the payment request and return status rejected", async () => {
+    test("PATCH /transactions/:id/reject - should reject the payment request and return status rejected",  { tag: "@regression" },  async () => {
       test.fail(
         true,
         "Known bug: rejecting a request returns status 'complete' instead of 'rejected'",
@@ -177,7 +177,7 @@ test.describe("Transaction API tests", () => {
   });
 
   test.describe("API transaction flow - Balance verification", () => {
-    test("should verify balances are updated correctly after a payment", async () => {
+    test("should verify balances are updated correctly after a payment",  { tag: "@smoke" },  async () => {
       let user1BalanceBefore: number;
       let user1BalanceAfter: number;
       let user2BalanceBefore: number;
@@ -214,7 +214,7 @@ test.describe("Transaction API tests", () => {
         expect(user2BalanceAfter).toBe(user2BalanceBefore + 1000);
       });
     });
-    test("should verify balances are updated correctly after accepting a request", async () => {
+    test("should verify balances are updated correctly after accepting a request", { tag: "@regression" }, async () => {
       let user1BalanceBefore: number;
       let user1BalanceAfter: number;
       let user2BalanceBefore: number;

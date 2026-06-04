@@ -20,7 +20,7 @@ test.describe("Transaction Page flow - send payment", () => {
     homePage = new HomePage(loggedInPage);
   });
 
-  test("Should complete full payment flow and verify both accounts", async ({
+  test("Should complete full payment flow and verify both accounts", { tag: "@smoke" }, async ({
     loggedInPage,
     secondUserPage,
     isMobile,
@@ -98,7 +98,7 @@ test.describe("Transaction Page flow - request payment", () => {
     user2TransactionDetail = new TransactionDetailPage(secondUserPage);
   });
 
-  test("should accept a payment request and verify both balances", async ({
+  test("should accept a payment request and verify both balances", { tag: "@regression" }, async ({
     loggedInPage,
     secondUserPage,
     isMobile,
@@ -154,7 +154,7 @@ test.describe("Transaction Page flow - request payment", () => {
       expect(await getBalance(loggedInPage)).toBe(user1Balance + 500);
     });
   });
-  test("should reject a payment request and verify both balances are the same", async ({
+  test("should reject a payment request and verify both balances are the same", { tag: "@regression" }, async ({
     loggedInPage,
     secondUserPage,
     isMobile,
