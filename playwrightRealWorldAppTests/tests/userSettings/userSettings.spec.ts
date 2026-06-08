@@ -5,7 +5,10 @@ import { UserSettingsPage } from "../pages/UserSettingsPage";
 test.describe("User Settings", () => {
   let userSettingsPage: UserSettingsPage;
 
-  test.beforeEach(async ({ loggedInPage }) => {
+  test.beforeEach(async ({ loggedInPage, request }) => {
+
+    await request.post('http://localhost:3001/testData/seed');
+
     userSettingsPage = new UserSettingsPage(loggedInPage);
      await userSettingsPage.goto();
   });
