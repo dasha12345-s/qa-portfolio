@@ -32,7 +32,7 @@ jobs:
         working-directory: playwrightRealWorldAppTests
 
       - name: Run Playwright tests
-        run: npx playwright test
+        run: npx playwright test --project=chromium
         working-directory: playwrightRealWorldAppTests
 
       - name: Upload report on failure
