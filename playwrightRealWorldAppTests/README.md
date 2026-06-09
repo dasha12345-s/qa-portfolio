@@ -8,6 +8,17 @@ End-to-end Playwright + TypeScript automation suite for the Cypress Real World A
 The suite includes 335 local test executions across UI, API, mocked network, and cross-browser layers. It covers payment flows, multi-user balance verification, validation behavior, and security edge cases. GitHub Actions runs 67 Chromium tests on every push to keep feedback fast.
 Application defects are documented in automated tests with `test.fail()` and supported by detailed bug reports in `docs/bug-reports/`.
 
+## Application Under Test
+
+The application under test is the Cypress Real World App, a production-like banking/payment demo application originally provided as an open-source project:
+
+`https://github.com/cypress-io/cypress-realworld-app`
+
+For this portfolio, I intentionally kept the automation suite in a separate folder instead of restructuring the application source code. My focus was on designing and documenting the QA automation strategy around an existing application, not on modifying the application itself.
+
+The Playwright suite is organized separately to make the test architecture, fixtures, page objects, API coverage, network mocking, and CI strategy easier to review as standalone QA automation work.
+
+
 ## What This Project Demonstrates
 
 - Design automation coverage around business-critical flows
