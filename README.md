@@ -66,7 +66,7 @@ The Cypress suite is intentionally narrower than the Playwright suite. It focuse
 
 ---
 
-### [Saucedemo — E2E Test Suite](./saucedemo-full-suite-cypress)
+### [Saucedemo — E2E Test Suite](./saucedemo-full-suite)
 
 > 34-test Cypress suite covering the full user journey on a demo e-commerce platform.
 
