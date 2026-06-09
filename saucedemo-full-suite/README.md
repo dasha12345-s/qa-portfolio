@@ -1,6 +1,6 @@
 # [Saucedemo Automation](./saucedemo-full-suite)
 
-![Cypress Tests](https://github.com/dasha12345-s/qa-portfolio/actions/workflows/cypress.yml/badge.svg)
+![Tests](https://github.com/dasha12345-s/qa-portfolio/actions/workflows/cypress.yml/badge.svg)
 
 **Cypress** · **Playwright** · **JavaScript** · **TypeScript** · **Page Object Model** · **API Mocking** · **Fixtures** · **CI/CD**
 
