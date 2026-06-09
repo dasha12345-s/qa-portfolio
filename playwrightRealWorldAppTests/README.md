@@ -10,9 +10,7 @@ Application defects are documented in automated tests with `test.fail()` and sup
 
 ## Application Under Test
 
-The application under test is the Cypress Real World App, a production-like banking/payment demo application originally provided as an open-source project:
-
- [cypress-realworld-app](https://github.com/cypress-io/cypress-realworld-app) 
+The application under test is the Cypress Real World App, a production-like banking/payment demo application originally provided as an open-source project: [cypress-realworld-app](https://github.com/cypress-io/cypress-realworld-app) 
 
 For this portfolio, I intentionally kept the automation suite in a separate folder instead of restructuring the application source code. My focus was on designing and documenting the QA automation strategy around an existing application, not on modifying the application itself.
 
