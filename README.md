@@ -1,4 +1,3 @@
-
 # QA Automation Portfolio — Darya Shostak
 
 ![Playwright Tests](https://github.com/dasha12345-s/qa-portfolio/actions/workflows/playwright.yml/badge.svg)
@@ -8,7 +7,19 @@
 
 ## Portfolio Focus
 
-This portfolio covers UI, API, CI/CD, and defect documentation across two real-world applications. The focus is on automation strategy, maintainable test design, and visible defect tracking.
+This portfolio demonstrates UI automation, API testing, CI/CD integration, and defect documentation across multiple demo applications. The focus is on automation strategy, maintainable test design, reusable test architecture, and visible defect tracking.
+
+---
+
+## Application Under Test
+
+The main application under test is the Cypress Real World App, a production-like banking/payment demo application provided by Cypress as an open-source project:
+
+`https://github.com/cypress-io/cypress-realworld-app`
+
+For this portfolio, I intentionally kept the automation suites separate from the application source code. My focus was on designing and documenting QA automation around an existing application, not on modifying the application itself.
+
+The Playwright and Cypress suites are organized in separate folders so the test architecture, framework-specific setup, CI workflows, and automation strategy can be reviewed independently.
 
 ---
 
@@ -16,7 +27,11 @@ This portfolio covers UI, API, CI/CD, and defect documentation across two real-w
 
 ### [Playwright Real World App — QA Automation Test Suite](./playwrightRealWorldAppTests)
 
-> End-to-end Playwright + TypeScript automation suite for the Cypress Real World App, a production-like banking/payment demo application. Covers UI, API, mocked network, multi-user payment flows, cross-browser validation, and GitHub Actions CI.
+> The main showcase automation suite.
+
+This end-to-end Playwright + TypeScript suite expands coverage for the Cypress Real World App, a production-like banking/payment demo application.
+
+It covers UI flows, API validation, network mocking, security scenarios, multi-user browser contexts, reusable fixtures, authentication state reuse, CI strategy, and cross-browser execution.
 
 | Area                 | Coverage                                                                                              |
 | -------------------- | ----------------------------------------------------------------------------------------------------- |
@@ -31,29 +46,33 @@ This portfolio covers UI, API, CI/CD, and defect documentation across two real-w
 
 ---
 
-### [Cypress Real World App — Full Test Suite](./cypressRealWorldAppTests)
+### [Cypress Real World App — Test Suite](./cypressRealWorldAppTests)
 
-> End-to-end and API automation suite against a production-grade full-stack payment application (React + Express + SQLite). Tests run in GitHub Actions CI with the app spun up from source on every push.
+> Focused Cypress coverage for the most business-critical money movement scenarios.
 
-| Area | Coverage |
-|------|----------|
-| Authentication | Login, sign-up, session management |
+This suite demonstrates earlier Cypress-based end-to-end automation for the core transaction lifecycle, including send payment flow, request/accept/reject behavior, and balance verification.
+
+The Cypress suite is intentionally narrower than the Playwright suite. It focuses on high-risk payment scenarios, while the Playwright suite expands coverage across UI, API, mocking, security, fixtures, CI strategy, and cross-browser execution.
+
+| Area              | Coverage                                                    |
+| ----------------- | ----------------------------------------------------------- |
+| Authentication    | Login, sign-up, session management                          |
 | Transaction Flows | Send payment, request money, accept/reject — multi-user E2E |
-| API Testing | POST, PATCH, GET against Express REST backend |
-| Error Handling | 401 Unauthorized, 422 Validation, 404 Not Found |
-| Bug Detection | 4 backend bugs found, confirmed, and documented |
+| API Testing       | POST, PATCH, GET against Express REST backend               |
+| Error Handling    | 401 Unauthorized, 422 Validation, 404 Not Found             |
+| Bug Detection     | 4 backend bugs found, confirmed, and documented             |
 
-**Key techniques:** `cy.session()` · `cy.intercept()` · `cy.request()` · `db:seed` task · Page Object Model · `deep.eq` array assertions · `it.skip()` bug documentation
+**Key techniques:** `cy.session()` · `cy.intercept()` · `cy.request()` · `db:seed` task · Page Object Model · `deep.eq` array assertions · documented known defects
 
 ---
 
 ### [Saucedemo — E2E Test Suite](./saucedemo-full-suite-cypress)
 
-> 34-test Cypress suite covering the full user journey on a demo e-commerce platform. 
+> 34-test Cypress suite covering the full user journey on a demo e-commerce platform.
 
 Included to demonstrate data-driven testing patterns and CI artifact configuration.
 
-**Key techniques:** Page Object Model · `cy.intercept()` stubbing · JSON fixtures · GitHub Actions · Screenshot and video artifacts
+**Key techniques:** Page Object Model · `cy.intercept()` stubbing · JSON fixtures · GitHub Actions · screenshot and video artifacts
 
 ---
 
@@ -61,15 +80,15 @@ Included to demonstrate data-driven testing patterns and CI artifact configurati
 
 > Comprehensive manual testing artifacts demonstrating QA fundamentals: test planning, structured test design, bug reporting, and API validation.
 
-Included to demonstrate QA fundamentals — test planning, structured design techniques, and manual defect documentation.
+Included to demonstrate QA fundamentals, structured test design techniques, and manual defect documentation.
 
-Includes: Test plan · bug reports · equivalence partitioning · boundary value analysis · decision table · state transition · security checklist · traceability matrix · Postman collection
+Includes: test plan · bug reports · equivalence partitioning · boundary value analysis · decision table · state transition · security checklist · traceability matrix · Postman collection
 
 ---
 
 ## Tech Stack
 
-`Playwright` `TypeScript` `Cypress` `JavaScript ES6+` `Node.js` `GitHub Actions` `REST API` `Postman` `Page Object Model` `CI/CD`
+`Playwright` · `TypeScript` · `Cypress` · `JavaScript ES6+` · `Node.js` · `GitHub Actions` · `REST API` · `Postman` · `Page Object Model` · `CI/CD`
 
 ---
 
