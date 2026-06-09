@@ -12,7 +12,7 @@ Application defects are documented in automated tests with `test.fail()` and sup
 
 The application under test is the Cypress Real World App, a production-like banking/payment demo application originally provided as an open-source project:
 
-`https://github.com/cypress-io/cypress-realworld-app`
+ [cypress-realworld-app](https://github.com/cypress-io/cypress-realworld-app) 
 
 For this portfolio, I intentionally kept the automation suite in a separate folder instead of restructuring the application source code. My focus was on designing and documenting the QA automation strategy around an existing application, not on modifying the application itself.
 
@@ -140,6 +140,8 @@ The CI pipeline runs the Chromium project only to keep feedback fast and stable 
 - CI: Chromium only, 67 tests, approximately 4 minutes per push
 - Local full suite: 335 test executions across 5 browser/device projects, approximately 15 minutes
 - Cross-browser coverage is kept local because the application has known browser-specific bugs
+
+[View workflow runs](https://github.com/dasha12345-s/qa-portfolio/actions/workflows/playwright.yml)
 
 ### Scope
 
