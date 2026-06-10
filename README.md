@@ -76,7 +76,7 @@ Included to demonstrate data-driven testing patterns and CI artifact configurati
 
 ---
 
-### [Login Form — Manual QA Documentation](./loginForm)
+### [Login Form — Manual QA Documentation](https://github.com/dasha12345-s/qa-portfolio/tree/main/login-feature-manual-qa-docs)
 
 > Comprehensive manual testing artifacts demonstrating QA fundamentals: test planning, structured test design, bug reporting, and API validation.
 
